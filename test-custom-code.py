@@ -20,10 +20,11 @@ def post(action=None, success=None, container=None, results=None, handle=None, f
     phantom.debug("post() called")
 
     # phantom.debug('Action: {0} {1}'.format(action['name'], ('SUCCEEDED' if success else 'FAILED')))
-    usr="anlt"
+    container_artifact_data_userName = phantom.collect2(container=container, datapath=["artifact:*.cef.destinationUserName","artifact:*.id"])
+    container_artifact_data_host = phantom.collect2(container=container, datapath=["artifact:*.cef.deviceCustomString1","artifact:*.id"])
     body_formatted_string = phantom.format(
         container=container,
-        template="""{\n  \"user\": \"%s\",\n  \"host\": \"string\",\n  \"status\": 0,\n  \"description\": \"string\"\n}"""%(usr),
+        template="""{\n  \"%s\": \"string\",\n  \"host\": \"%s\",\n  \"status\": 0,\n  \"description\": \"string\"\n}"""%(container_artifact_data_userName,container_artifact_data_host),
         parameters=[])
     headers_formatted_string = phantom.format(
         container=container,
