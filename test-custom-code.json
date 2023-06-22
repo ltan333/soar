@@ -21,7 +21,7 @@
                     "targetPort": "1_in"
                 }
             ],
-            "hash": "884d504f7c7f77384092608daee30918349c57c5",
+            "hash": "784f8cbac51c95263cda231e298cb64a05d7b466",
             "nodes": {
                 "0": {
                     "data": {
@@ -80,7 +80,7 @@
                             "location": {
                                 "functionId": 1,
                                 "parameters": [],
-                                "template": "{\"/\"}\n"
+                                "template": "{/}\n"
                             }
                         },
                         "requiredParameters": [
@@ -111,7 +111,7 @@
         "schema": "5.0.6",
         "version": "5.3.2.88192"
     },
-    "create_time": "2023-06-22T05:34:23.207148+00:00",
+    "create_time": "2023-06-22T05:36:33.741242+00:00",
     "draft_mode": false,
     "labels": [
         "*"
