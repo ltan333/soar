@@ -24,7 +24,7 @@ def post(action=None, success=None, container=None, results=None, handle=None, f
     container_artifact_data_host = phantom.collect2(container=container, datapath=["artifact:*.cef.deviceCustomString1","artifact:*.id"])
     body_formatted_string = phantom.format(
         container=container,
-        template="""{\n  \"%s\": \"string\",\n  \"host\": \"%s\",\n  \"status\": 0,\n  \"description\": \"string\"\n}"""%(container_artifact_data_userName[0],container_artifact_data_host[0]),
+        template="""{\n  \"user\": \"%s\",\n  \"host\": \"%s\",\n  \"status\": 0,\n  \"description\": \"string\"\n}"""%(container_artifact_data_userName[0][0],container_artifact_data_host[0][0]),
         parameters=[])
     headers_formatted_string = phantom.format(
         container=container,
