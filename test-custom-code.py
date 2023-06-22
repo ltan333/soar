@@ -24,9 +24,7 @@ def post(action=None, success=None, container=None, results=None, handle=None, f
     body_formatted_string = phantom.format(
         container=container,
         template="""{\n  \"user\": \"string\",\n  \"host\": \"string\",\n  \"status\": 0,\n  \"description\": \"string\"\n}""",
-        parameters=[
-            ""
-        ])
+        parameters=[])
     headers_formatted_string = phantom.format(
         container=container,
         template="""{\"accept\":\"application/json\",\"Content-Type\": \"application/json\"}""",
