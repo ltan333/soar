@@ -23,11 +23,11 @@ def get_data_1(action=None, success=None, container=None, results=None, handle=N
 
     headers_formatted_string = phantom.format(
         container=container,
-        template="""{0}""",
+        template="""{\"accept\": \"application/json\",\"Content-Type\": \"application/json\"}""",
         parameters=[])
     location_formatted_string = phantom.format(
         container=container,
-        template="""/\n""",
+        template="""{\"/\"}\n""",
         parameters=[])
 
     parameters = []
