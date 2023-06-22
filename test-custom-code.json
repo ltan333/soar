@@ -21,7 +21,7 @@
                     "targetPort": "1_in"
                 }
             ],
-            "hash": "516533abdcd3ee4c4791dae83796833ac4e9b071",
+            "hash": "31802ffd282d3753829246c232e7519b029af95b",
             "nodes": {
                 "0": {
                     "data": {
@@ -56,7 +56,7 @@
                     "y": 660
                 },
                 "5": {
-                    "customCode": "def post(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug(\"post() called\")\n\n    # phantom.debug('Action: {0} {1}'.format(action['name'], ('SUCCEEDED' if success else 'FAILED')))\n    container_artifact_data_userName = phantom.collect2(container=container, datapath=[\"artifact:*.cef.destinationUserName\",\"artifact:*.id\"])\n    container_artifact_data_host = phantom.collect2(container=container, datapath=[\"artifact:*.cef.deviceCustomString1\",\"artifact:*.id\"])\n    body_formatted_string = phantom.format(\n        container=container,\n        template=\"\"\"{\\n  \\\"%s\\\": \\\"string\\\",\\n  \\\"host\\\": \\\"%s\\\",\\n  \\\"status\\\": 0,\\n  \\\"description\\\": \\\"string\\\"\\n}\"\"\"%(container_artifact_data_userName,container_artifact_data_host),\n        parameters=[])\n    headers_formatted_string = phantom.format(\n        container=container,\n        template=\"\"\"{\\\"accept\\\":\\\"application/json\\\",\\\"Content-Type\\\": \\\"application/json\\\"}\"\"\",\n        parameters=[])\n\n    parameters = []\n\n    if body_formatted_string is not None:\n        parameters.append({\n            \"body\": body_formatted_string,\n            \"headers\": headers_formatted_string,\n            \"location\": \"/alert\",\n            \"verify_certificate\": False,\n        })\n\n    ################################################################################\n    ## Custom Code Start\n    ################################################################################\n\n    # Write your custom code here...\n\n    ################################################################################\n    ## Custom Code End\n    ################################################################################\n\n    phantom.act(\"post data\", parameters=parameters, name=\"post\", assets=[\"http\"])\n\n    return",
+                    "customCode": "def post(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug(\"post() called\")\n\n    # phantom.debug('Action: {0} {1}'.format(action['name'], ('SUCCEEDED' if success else 'FAILED')))\n    container_artifact_data_userName = phantom.collect2(container=container, datapath=[\"artifact:*.cef.destinationUserName\",\"artifact:*.id\"])\n    container_artifact_data_host = phantom.collect2(container=container, datapath=[\"artifact:*.cef.deviceCustomString1\",\"artifact:*.id\"])\n    body_formatted_string = phantom.format(\n        container=container,\n        template=\"\"\"{\\n  \\\"%s\\\": \\\"string\\\",\\n  \\\"host\\\": \\\"%s\\\",\\n  \\\"status\\\": 0,\\n  \\\"description\\\": \\\"string\\\"\\n}\"\"\"%(container_artifact_data_userName[0],container_artifact_data_host[0]),\n        parameters=[])\n    headers_formatted_string = phantom.format(\n        container=container,\n        template=\"\"\"{\\\"accept\\\":\\\"application/json\\\",\\\"Content-Type\\\": \\\"application/json\\\"}\"\"\",\n        parameters=[])\n\n    parameters = []\n\n    if body_formatted_string is not None:\n        parameters.append({\n            \"body\": body_formatted_string,\n            \"headers\": headers_formatted_string,\n            \"location\": \"/alert\",\n            \"verify_certificate\": False,\n        })\n\n    ################################################################################\n    ## Custom Code Start\n    ################################################################################\n\n    # Write your custom code here...\n\n    ################################################################################\n    ## Custom Code End\n    ################################################################################\n\n    phantom.act(\"post data\", parameters=parameters, name=\"post\", assets=[\"http\"])\n\n    return",
                     "data": {
                         "action": "post data",
                         "actionType": "generic",
@@ -120,7 +120,7 @@
         "schema": "5.0.6",
         "version": "5.3.2.88192"
     },
-    "create_time": "2023-06-22T06:18:17.264040+00:00",
+    "create_time": "2023-06-22T06:18:56.497822+00:00",
     "draft_mode": false,
     "labels": [
         "*"
