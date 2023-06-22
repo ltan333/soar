@@ -11,40 +11,29 @@ from datetime import datetime, timedelta
 def on_start(container):
     phantom.debug('on_start() called')
 
-    # call 'call_api_message' block
-    call_api_message(container=container)
+    # call 'get_data_1' block
+    get_data_1(container=container)
 
     return
 
-def call_api_message(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
-    phantom.debug("call_api_message() called")
+def get_data_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
+    phantom.debug("get_data_1() called")
 
     # phantom.debug('Action: {0} {1}'.format(action['name'], ('SUCCEEDED' if success else 'FAILED')))
 
-    body_formatted_string = phantom.format(
-        container=container,
-        template="""{\"user\": \"anlt\",\"host\": \"string\",\"status\": 0,\"description\": \"string\"}""",
-        parameters=[
-            "artifact:*.cef.deviceCustomString1"
-        ])
     headers_formatted_string = phantom.format(
         container=container,
         template="""{'Content-type': 'application/xml; charset=UTF-8'}""",
-        parameters=[
-            "artifact:*.cef.destinationUserName"
-        ])
+        parameters=[])
     location_formatted_string = phantom.format(
         container=container,
-        template="""/alert""",
-        parameters=[
-            "artifact:*.cef.destinationUserName"
-        ])
+        template="""/\n""",
+        parameters=[])
 
     parameters = []
 
-    if body_formatted_string is not None and location_formatted_string is not None:
+    if location_formatted_string is not None:
         parameters.append({
-            "body": body_formatted_string,
             "headers": headers_formatted_string,
             "location": location_formatted_string,
             "verify_certificate": False,
@@ -60,7 +49,7 @@ def call_api_message(action=None, success=None, container=None, results=None, ha
     ## Custom Code End
     ################################################################################
 
-    phantom.act("post data", parameters=parameters, name="call_api_message", assets=["http"])
+    phantom.act("get data", parameters=parameters, name="get_data_1", assets=["http"])
 
     return
 

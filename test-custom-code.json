@@ -7,21 +7,21 @@
             "description": "",
             "edges": [
                 {
-                    "id": "port_0_to_port_3",
+                    "id": "port_0_to_port_4",
                     "sourceNode": "0",
                     "sourcePort": "0_out",
-                    "targetNode": "3",
-                    "targetPort": "3_in"
+                    "targetNode": "4",
+                    "targetPort": "4_in"
                 },
                 {
-                    "id": "port_3_to_port_1",
-                    "sourceNode": "3",
-                    "sourcePort": "3_out",
+                    "id": "port_4_to_port_1",
+                    "sourceNode": "4",
+                    "sourcePort": "4_out",
                     "targetNode": "1",
                     "targetPort": "1_in"
                 }
             ],
-            "hash": "a08fb264575cdcd62412506306a2bdeba9d910c7",
+            "hash": "66ab656a0c4e359c4e3d2cd668d09c37c3b36ce0",
             "nodes": {
                 "0": {
                     "data": {
@@ -55,14 +55,11 @@
                     "x": 1000,
                     "y": 660
                 },
-                "3": {
-                    "customCode": null,
+                "4": {
                     "data": {
-                        "action": "post data",
-                        "actionType": "generic",
+                        "action": "get data",
+                        "actionType": "investigate",
                         "advanced": {
-                            "customName": "call API message",
-                            "customNameId": 0,
                             "join": []
                         },
                         "connector": "HTTP",
@@ -72,36 +69,21 @@
                         "connectorId": "290b7499-0374-4930-9cdc-5e9b05d65827",
                         "connectorVersion": "v1",
                         "functionId": 1,
-                        "functionName": "call_api_message",
-                        "id": "3",
+                        "functionName": "get_data_1",
+                        "id": "4",
                         "parameters": {
-                            "body": {
-                                "functionId": 1,
-                                "parameters": [
-                                    "artifact:*.cef.deviceCustomString1"
-                                ],
-                                "template": "{\"user\": \"anlt\",\"host\": \"string\",\"status\": 0,\"description\": \"string\"}"
-                            },
                             "headers": {
                                 "functionId": 1,
-                                "parameters": [
-                                    "artifact:*.cef.destinationUserName"
-                                ],
+                                "parameters": [],
                                 "template": "{'Content-type': 'application/xml; charset=UTF-8'}"
                             },
                             "location": {
                                 "functionId": 1,
-                                "parameters": [
-                                    "artifact:*.cef.destinationUserName"
-                                ],
-                                "template": "/alert"
+                                "parameters": [],
+                                "template": "/\n"
                             }
                         },
                         "requiredParameters": [
-                            {
-                                "data_type": "string",
-                                "field": "body"
-                            },
                             {
                                 "data_type": "string",
                                 "field": "location"
@@ -114,11 +96,10 @@
                         "type": "action"
                     },
                     "errors": {},
-                    "id": "3",
+                    "id": "4",
                     "type": "action",
-                    "userCode": null,
-                    "x": 980,
-                    "y": 540
+                    "x": 1020,
+                    "y": 520
                 }
             },
             "notes": ""
@@ -130,7 +111,7 @@
         "schema": "5.0.6",
         "version": "5.3.2.88192"
     },
-    "create_time": "2023-06-22T05:02:12.889982+00:00",
+    "create_time": "2023-06-22T05:05:45.592210+00:00",
     "draft_mode": false,
     "labels": [
         "*"
