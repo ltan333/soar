@@ -23,7 +23,7 @@ def post(action=None, success=None, container=None, results=None, handle=None, f
 
     body_formatted_string = phantom.format(
         container=container,
-        template="""{"user": "artifact:*.cef.destinationUserName","host": "artifact:*.cef.deviceCustomString1","status": 0,"description": "string"}""",
+        template="""{\"user\": \"artifact:*.cef.destinationUserName\",\"host\": \"artifact:*.cef.deviceCustomString1\",\"status\": 0,\"description\": \"string\"}""",
         parameters=[])
     headers_formatted_string = phantom.format(
         container=container,
