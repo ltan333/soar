@@ -25,19 +25,19 @@ def call_api_message(action=None, success=None, container=None, results=None, ha
         container=container,
         template="""{\"user\": \"anlt\",\"host\": \"string\",\"status\": 0,\"description\": \"string\"}""",
         parameters=[
-            ""
+            "artifact:*.cef.deviceCustomString1"
         ])
     headers_formatted_string = phantom.format(
         container=container,
         template="""{'Content-type': 'application/xml; charset=UTF-8'}""",
         parameters=[
-            ""
+            "artifact:*.cef.destinationUserName"
         ])
     location_formatted_string = phantom.format(
         container=container,
         template="""/alert""",
         parameters=[
-            ""
+            "artifact:*.cef.destinationUserName"
         ])
 
     parameters = []
