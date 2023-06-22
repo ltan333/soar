@@ -24,10 +24,7 @@ def post(action=None, success=None, container=None, results=None, handle=None, f
     body_formatted_string = phantom.format(
         container=container,
         template="""{\"user\": \"string\",\"host\": \"string\",\"status\": 0,\"description\": \"string\"}\n""",
-        parameters=[
-            "artifact:*.cef.deviceCustomString1",
-            "artifact:*.cef.destinationUserName"
-        ])
+        parameters=[])
     headers_formatted_string = phantom.format(
         container=container,
         template="""{\"accept\":\"application/json\",\"Content-Type\": \"application/json\"}""",

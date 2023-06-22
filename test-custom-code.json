@@ -21,7 +21,7 @@
                     "targetPort": "1_in"
                 }
             ],
-            "hash": "9e9b7b8af3a425d6a598d7b91f92e0bdc78f9d4a",
+            "hash": "b3a7ff030ee308df2d352849c2384624c5ea46de",
             "nodes": {
                 "0": {
                     "data": {
@@ -76,11 +76,7 @@
                         "id": "5",
                         "parameters": {
                             "body": {
-                                "functionId": 1,
-                                "parameters": [
-                                    "artifact:*.cef.deviceCustomString1",
-                                    "artifact:*.cef.destinationUserName"
-                                ],
+                                "parameters": [],
                                 "template": "{\"user\": \"string\",\"host\": \"string\",\"status\": 0,\"description\": \"string\"}\n"
                             },
                             "headers": {
@@ -123,7 +119,7 @@
         "schema": "5.0.6",
         "version": "5.3.2.88192"
     },
-    "create_time": "2023-06-22T05:55:23.076751+00:00",
+    "create_time": "2023-06-22T05:56:01.015720+00:00",
     "draft_mode": false,
     "labels": [
         "*"
