@@ -20,10 +20,10 @@ def post(action=None, success=None, container=None, results=None, handle=None, f
     phantom.debug("post() called")
 
     # phantom.debug('Action: {0} {1}'.format(action['name'], ('SUCCEEDED' if success else 'FAILED')))
-    usr = "anlt"
+    usr="anlt"
     body_formatted_string = phantom.format(
         container=container,
-        template="""{\n  "user": "{}",\n  "host": "string",\n  "status": 0,\n  "description": "string"\n}""".format(usr),
+        template="""{\n  \"user\": \"{}\",\n  \"host\": \"string\",\n  \"status\": 0,\n  \"description\": \"string\"\n}""".format(usr),
         parameters=[])
     headers_formatted_string = phantom.format(
         container=container,
