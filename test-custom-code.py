@@ -11,31 +11,32 @@ from datetime import datetime, timedelta
 def on_start(container):
     phantom.debug('on_start() called')
 
-    # call 'get_data_1' block
-    get_data_1(container=container)
+    # call 'post' block
+    post(container=container)
 
     return
 
-def get_data_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
-    phantom.debug("get_data_1() called")
+def post(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
+    phantom.debug("post() called")
 
     # phantom.debug('Action: {0} {1}'.format(action['name'], ('SUCCEEDED' if success else 'FAILED')))
 
+    body_formatted_string = phantom.format(
+        container=container,
+        template="""{\"user\": \"string\",\"host\": \"string\",\"status\": 0,\"description\": \"string\"}""",
+        parameters=[])
     headers_formatted_string = phantom.format(
         container=container,
-        template="""{\"accept\": \"application/json\",\"Content-Type\": \"application/json\"}""",
-        parameters=[])
-    location_formatted_string = phantom.format(
-        container=container,
-        template="""/home""",
+        template="""{\"accept\":\"application/json\",\"Content-Type\": \"application/json\"}""",
         parameters=[])
 
     parameters = []
 
-    if location_formatted_string is not None:
+    if body_formatted_string is not None:
         parameters.append({
+            "body": body_formatted_string,
             "headers": headers_formatted_string,
-            "location": location_formatted_string,
+            "location": "/alert",
             "verify_certificate": False,
         })
 
@@ -49,7 +50,7 @@ def get_data_1(action=None, success=None, container=None, results=None, handle=N
     ## Custom Code End
     ################################################################################
 
-    phantom.act("get data", parameters=parameters, name="get_data_1", assets=["http"])
+    phantom.act("post data", parameters=parameters, name="post", assets=["http"])
 
     return
 

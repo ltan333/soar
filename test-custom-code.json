@@ -7,21 +7,21 @@
             "description": "",
             "edges": [
                 {
-                    "id": "port_0_to_port_4",
+                    "id": "port_0_to_port_5",
                     "sourceNode": "0",
                     "sourcePort": "0_out",
-                    "targetNode": "4",
-                    "targetPort": "4_in"
+                    "targetNode": "5",
+                    "targetPort": "5_in"
                 },
                 {
-                    "id": "port_4_to_port_1",
-                    "sourceNode": "4",
-                    "sourcePort": "4_out",
+                    "id": "port_5_to_port_1",
+                    "sourceNode": "5",
+                    "sourcePort": "5_out",
                     "targetNode": "1",
                     "targetPort": "1_in"
                 }
             ],
-            "hash": "14cca856bd48bbdb3afb71782bad349cb7799f74",
+            "hash": "d49d1419c69de63eddf128284c00c1419e5510bd",
             "nodes": {
                 "0": {
                     "data": {
@@ -55,11 +55,13 @@
                     "x": 1000,
                     "y": 660
                 },
-                "4": {
+                "5": {
                     "data": {
-                        "action": "get data",
-                        "actionType": "investigate",
+                        "action": "post data",
+                        "actionType": "generic",
                         "advanced": {
+                            "customName": "post ",
+                            "customNameId": 0,
                             "join": []
                         },
                         "connector": "HTTP",
@@ -69,19 +71,26 @@
                         "connectorId": "290b7499-0374-4930-9cdc-5e9b05d65827",
                         "connectorVersion": "v1",
                         "functionId": 1,
-                        "functionName": "get_data_1",
-                        "id": "4",
+                        "functionName": "post",
+                        "id": "5",
                         "parameters": {
+                            "body": {
+                                "functionId": 1,
+                                "parameters": [],
+                                "template": "{\"user\": \"string\",\"host\": \"string\",\"status\": 0,\"description\": \"string\"}"
+                            },
                             "headers": {
                                 "functionId": 1,
                                 "parameters": [],
-                                "template": "{\"accept\": \"application/json\",\"Content-Type\": \"application/json\"}"
+                                "template": "{\"accept\":\"application/json\",\"Content-Type\": \"application/json\"}"
                             },
-                            "location": {
-                                "template": "/home"
-                            }
+                            "location": "/alert"
                         },
                         "requiredParameters": [
+                            {
+                                "data_type": "string",
+                                "field": "body"
+                            },
                             {
                                 "data_type": "string",
                                 "field": "location"
@@ -94,10 +103,10 @@
                         "type": "action"
                     },
                     "errors": {},
-                    "id": "4",
+                    "id": "5",
                     "type": "action",
-                    "x": 1020,
-                    "y": 520
+                    "x": 993.599853515625,
+                    "y": 541
                 }
             },
             "notes": ""
@@ -109,7 +118,7 @@
         "schema": "5.0.6",
         "version": "5.3.2.88192"
     },
-    "create_time": "2023-06-22T05:40:32.482669+00:00",
+    "create_time": "2023-06-22T05:44:56.211905+00:00",
     "draft_mode": false,
     "labels": [
         "*"
