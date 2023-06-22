@@ -57,6 +57,7 @@ def post(action=None, success=None, container=None, results=None, handle=None, f
 
     return
 
+
 def on_finish(container, summary):
     phantom.debug("on_finish() called")
 
