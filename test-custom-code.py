@@ -23,7 +23,7 @@ def post(action=None, success=None, container=None, results=None, handle=None, f
     usr="anlt"
     body_formatted_string = phantom.format(
         container=container,
-        template="""{\n  \"user\": \"aaaa\",\n  \"host\": \"string\",\n  \"status\": 0,\n  \"description\": \"string\"\n}""",
+        template="""{\n  \"user\": \"%s\",\n  \"host\": \"string\",\n  \"status\": 0,\n  \"description\": \"string\"\n}"""%(usr),
         parameters=[])
     headers_formatted_string = phantom.format(
         container=container,
