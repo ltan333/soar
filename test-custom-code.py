@@ -23,7 +23,7 @@ def get_data_1(action=None, success=None, container=None, results=None, handle=N
 
     headers_formatted_string = phantom.format(
         container=container,
-        template="""{'Content-type': 'application/xml; charset=UTF-8'}""",
+        template="""{0}""",
         parameters=[])
     location_formatted_string = phantom.format(
         container=container,
