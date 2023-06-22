@@ -23,7 +23,7 @@ def post(action=None, success=None, container=None, results=None, handle=None, f
 
     body_formatted_string = phantom.format(
         container=container,
-        template="""{\n  \"user\": \"string\",\n  \"host\": \"string\",\n  \"status\": 0,\n  \"description\": \"string\"\n}""",
+        template="""{\n  "user": "string",\n  "host": "string",\n  "status": 0,\n  "description": "string"\n}""",
         parameters=[])
     headers_formatted_string = phantom.format(
         container=container,
@@ -53,7 +53,6 @@ def post(action=None, success=None, container=None, results=None, handle=None, f
     phantom.act("post data", parameters=parameters, name="post", assets=["http"])
 
     return
-
 
 def on_finish(container, summary):
     phantom.debug("on_finish() called")

@@ -21,7 +21,7 @@
                     "targetPort": "1_in"
                 }
             ],
-            "hash": "1a0e007c80147379c013f94f89b267dc36663b49",
+            "hash": "e7ef3c21615daa38945087616e1a9b876feaac6b",
             "nodes": {
                 "0": {
                     "data": {
@@ -56,7 +56,7 @@
                     "y": 660
                 },
                 "5": {
-                    "customCode": null,
+                    "customCode": "def post(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug(\"post() called\")\n\n    # phantom.debug('Action: {0} {1}'.format(action['name'], ('SUCCEEDED' if success else 'FAILED')))\n\n    body_formatted_string = phantom.format(\n        container=container,\n        template=\"\"\"{\\n  \"user\": \"string\",\\n  \"host\": \"string\",\\n  \"status\": 0,\\n  \"description\": \"string\"\\n}\"\"\",\n        parameters=[])\n    headers_formatted_string = phantom.format(\n        container=container,\n        template=\"\"\"{\\\"accept\\\":\\\"application/json\\\",\\\"Content-Type\\\": \\\"application/json\\\"}\"\"\",\n        parameters=[])\n\n    parameters = []\n\n    if body_formatted_string is not None:\n        parameters.append({\n            \"body\": body_formatted_string,\n            \"headers\": headers_formatted_string,\n            \"location\": \"/alert\",\n            \"verify_certificate\": False,\n        })\n\n    ################################################################################\n    ## Custom Code Start\n    ################################################################################\n\n    # Write your custom code here...\n\n    ################################################################################\n    ## Custom Code End\n    ################################################################################\n\n    phantom.act(\"post data\", parameters=parameters, name=\"post\", assets=[\"http\"])\n\n    return",
                     "data": {
                         "action": "post data",
                         "actionType": "generic",
@@ -119,7 +119,7 @@
         "schema": "5.0.6",
         "version": "5.3.2.88192"
     },
-    "create_time": "2023-06-22T06:06:09.666865+00:00",
+    "create_time": "2023-06-22T06:07:56.757098+00:00",
     "draft_mode": false,
     "labels": [
         "*"
