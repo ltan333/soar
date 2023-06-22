@@ -19,32 +19,48 @@ def on_start(container):
 def call_api_message(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
     phantom.debug("call_api_message() called")
 
-    container_artifact_data = phantom.collect2(container=container, datapath=["artifact:*.cef.destinationUserName","artifact:*.cef.deviceCustomString1"])
+    # phantom.debug('Action: {0} {1}'.format(action['name'], ('SUCCEEDED' if success else 'FAILED')))
 
-    container_artifact_cef_item_0 = [item[0] for item in container_artifact_data]
-    container_artifact_cef_item_1 = [item[1] for item in container_artifact_data]
+    body_formatted_string = phantom.format(
+        container=container,
+        template="""{\n  \"user\": \"artifact:*.cef.deviceCustomString1\",\n  \"host\": \"string\",\n  \"status\": 0,\n  \"description\": \"string\"\n}""",
+        parameters=[
+            ""
+        ])
+    headers_formatted_string = phantom.format(
+        container=container,
+        template="""{0}\n""",
+        parameters=[
+            ""
+        ])
+    location_formatted_string = phantom.format(
+        container=container,
+        template="""/alert""",
+        parameters=[
+            ""
+        ])
+
+    parameters = []
+
+    if body_formatted_string is not None and location_formatted_string is not None:
+        parameters.append({
+            "body": body_formatted_string,
+            "headers": headers_formatted_string,
+            "location": location_formatted_string,
+            "verify_certificate": False,
+        })
 
     ################################################################################
     ## Custom Code Start
     ################################################################################
 
     # Write your custom code here...
-    import requests
-    api=f"http://192.168.232.7:3334/send-msteam/alert/{container_artifact_cef_item_1}/{container_artifact_cef_item_0}"
-    header = {
-        'Content-Type': 'application/json; charset=UTF-8'
-        }
-    data={}
-    rs = requests.get(api,headers=header,data=data)
-    rsj=rs.json()
-    print(rs.status_code)
-    print(rs.content)
-    print(rs.raw)
-    print(rs.text)
 
     ################################################################################
     ## Custom Code End
     ################################################################################
+
+    phantom.act("post data", parameters=parameters, name="call_api_message", assets=["http"])
 
     return
 
