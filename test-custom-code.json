@@ -21,7 +21,7 @@
                     "targetPort": "1_in"
                 }
             ],
-            "hash": "75e155bd9a9109dc568343285b7c310d0018e716",
+            "hash": "71f726d43df61a4e8e2431da0280d2d2df94745e",
             "nodes": {
                 "0": {
                     "data": {
@@ -80,9 +80,13 @@
                                 "parameters": [
                                     ""
                                 ],
-                                "template": "{\n  \"user\": \"anlt\",\n  \"host\": \"string\",\n  \"status\": 0,\n  \"description\": \"string\"\n}"
+                                "template": "{\"user\": \"anlt\",\"host\": \"string\",\"status\": 0,\"description\": \"string\"}"
                             },
                             "headers": {
+                                "functionId": 1,
+                                "parameters": [
+                                    ""
+                                ],
                                 "template": "{'Content-type': 'application/xml; charset=UTF-8'}"
                             },
                             "location": {
@@ -126,7 +130,7 @@
         "schema": "5.0.6",
         "version": "5.3.2.88192"
     },
-    "create_time": "2023-06-22T04:58:16.589814+00:00",
+    "create_time": "2023-06-22T05:00:44.520557+00:00",
     "draft_mode": false,
     "labels": [
         "*"

@@ -23,14 +23,16 @@ def call_api_message(action=None, success=None, container=None, results=None, ha
 
     body_formatted_string = phantom.format(
         container=container,
-        template="""{\n  \"user\": \"anlt\",\n  \"host\": \"string\",\n  \"status\": 0,\n  \"description\": \"string\"\n}""",
+        template="""{\"user\": \"anlt\",\"host\": \"string\",\"status\": 0,\"description\": \"string\"}""",
         parameters=[
             ""
         ])
     headers_formatted_string = phantom.format(
         container=container,
         template="""{'Content-type': 'application/xml; charset=UTF-8'}""",
-        parameters=[])
+        parameters=[
+            ""
+        ])
     location_formatted_string = phantom.format(
         container=container,
         template="""/alert""",
