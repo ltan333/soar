@@ -23,15 +23,15 @@ def post(action=None, success=None, container=None, results=None, handle=None, f
 
     body_formatted_string = phantom.format(
         container=container,
-        template="""{\"user\": \"artifact:*.cef.destinationUserName\",\"host\": \"artifact:*.cef.deviceCustomString1\",\"status\": 0,\"description\": \"string\"}""",
-        parameters=[])
-    headers_formatted_string = phantom.format(
-        container=container,
-        template="""{\"accept\":\"application/json\",\"Content-Type\": \"application/json\"}{0}\n{1}\n""",
+        template="""{\"user\": \"string\",\"host\": \"string\",\"status\": 0,\"description\": \"string\"}\n""",
         parameters=[
             "artifact:*.cef.deviceCustomString1",
             "artifact:*.cef.destinationUserName"
         ])
+    headers_formatted_string = phantom.format(
+        container=container,
+        template="""{\"accept\":\"application/json\",\"Content-Type\": \"application/json\"}""",
+        parameters=[])
 
     parameters = []
 
@@ -56,6 +56,7 @@ def post(action=None, success=None, container=None, results=None, handle=None, f
     phantom.act("post data", parameters=parameters, name="post", assets=["http"])
 
     return
+
 
 def on_finish(container, summary):
     phantom.debug("on_finish() called")
