@@ -23,7 +23,7 @@ def post_data_1(action=None, success=None, container=None, results=None, handle=
 
     body_formatted_string = phantom.format(
         container=container,
-        template="""{\n  \"sender\": \"string\",\n  \"receiver\": \"string\",\n  \"url\": \"\n        https://siuvipprono1siucapvutruthienhahemattroi.com.vn.net/asf/asf/asf/asfsaf/?123.asf\"\n}""",
+        template="""{\n  \"sender\": \"string\",\n  \"receiver\": \"string\",\n  \"url\": \"https://siuvipprono1siucapvutruthienhahemattroi.com.vn.net/asf/asf/asf/asfsaf/?123.asf\"\n}""",
         parameters=[])
     headers_formatted_string = phantom.format(
         container=container,
