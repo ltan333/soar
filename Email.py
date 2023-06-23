@@ -150,11 +150,11 @@ def send_message_info(action=None, success=None, container=None, results=None, h
 
     headers_formatted_string = phantom.format(
         container=container,
-        template="""{\n\"Content-Type\": \"application/json\";\n\"accept\": \"application/json\"\n}""",
+        template="""{\n\"accept\": \"application/json\"\n\"Content-Type\": \"application/json\";\n}""",
         parameters=[])
     body_formatted_string = phantom.format(
         container=container,
-        template="""{\n  \"sender\": \"anlt\",\n  \"receiver\": \"khoana\",\n  \"url\": \"abc\"\n}""",
+        template="""{\n  \"sender\": \"string\",\n  \"receiver\": \"string\",\n  \"url\": \"string\"\n}""",
         parameters=[])
     location_formatted_string = phantom.format(
         container=container,
