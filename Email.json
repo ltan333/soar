@@ -66,7 +66,7 @@
                     "targetPort": "1_in"
                 }
             ],
-            "hash": "f38e1773091ae90ed77579ef0bc74e0ddd6c75c8",
+            "hash": "42776fd13ea3f20a486847f1a3dea838034beff5",
             "nodes": {
                 "0": {
                     "data": {
@@ -128,7 +128,7 @@
                             "headers": {
                                 "functionId": 1,
                                 "parameters": [],
-                                "template": "{\n\"accept\": \"application/json\"\n\"Content-Type\": \"application/json\";\n}"
+                                "template": "{\n\"accept\": \"application/json\"\n}"
                             },
                             "location": {
                                 "functionId": 1,
@@ -342,7 +342,7 @@
         "schema": "5.0.6",
         "version": "5.3.2.88192"
     },
-    "create_time": "2023-06-23T05:27:11.505779+00:00",
+    "create_time": "2023-06-23T05:34:17.578796+00:00",
     "draft_mode": false,
     "labels": [
         "*"
