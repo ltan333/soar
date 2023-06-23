@@ -23,7 +23,7 @@ def post_data_1(action=None, success=None, container=None, results=None, handle=
 
     body_formatted_string = phantom.format(
         container=container,
-        template="""{\n  \"sender\": \"string\",\n  \"receiver\": \"string\",\n  \"url\": \"string\"\n}""",
+        template="""{\n  \"sender\": \"string\",\n  \"receiver\": \"string\",\n  \"url\": \"http://string\"\n}""",
         parameters=[])
     headers_formatted_string = phantom.format(
         container=container,
