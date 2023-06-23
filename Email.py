@@ -154,7 +154,7 @@ def send_message_info(action=None, success=None, container=None, results=None, h
         parameters=[])
     body_formatted_string = phantom.format(
         container=container,
-        template="""{\n  \"sender\": \"anlt\",\n  \"receiver\": \"khoana\",\n  \"url\": \"https://siuvipprono1siucapvutruthienhahemattroi.com.vn.net/asf/asf/asf/asfsaf/?123.asf\"\n}""",
+        template="""{\n  \"sender\": \"anlt\",\n  \"receiver\": \"khoana\",\n  \"url\": \"abc\"\n}""",
         parameters=[])
     location_formatted_string = phantom.format(
         container=container,
