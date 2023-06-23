@@ -82,7 +82,7 @@ def get_report_1(action=None, success=None, container=None, results=None, handle
     for scan_url_result_item in scan_url_result_data:
         if scan_url_result_item[0] is not None:
             parameters.append({
-                "report_type": "file",
+                "report_type": "url",
                 "scan_id": scan_url_result_item[0],
                 "context": {'artifact_id': scan_url_result_item[1]},
             })
